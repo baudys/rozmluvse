@@ -22,14 +22,14 @@ export const Contact = () => {
           />
 
           <div className='hidden xl:block'>
-            <div className='font-stabil text-lg xl:text-2xl grid grid-cols-[1fr_1.8fr] gap-y-10 gap-x-24'>
+            <div className='grid grid-cols-[1fr_1.8fr] gap-x-24 gap-y-10 font-stabil text-lg xl:text-2xl'>
               <div className='grid'>
                 <p>Pavlíkova 7, Klatovy</p>
                 <p>Křížová 162, Klatovy</p>
                 <a href='mailto:ciao@rozmluv.se'>ciao@rozmluv.se</a>
                 <a href='tel:+420734675810'>+420 734 675 810</a>
                 <button
-                  className='font-labil font-black place-self-start ffs-12-hover inline-flex'
+                  className='ffs-12-hover inline-flex place-self-start font-labil font-black'
                   onClick={() => openNewsletter()}
                 >
                   {language === 'cz' && 'Odběr newsletteru ←'}
@@ -53,24 +53,25 @@ export const Contact = () => {
                 <p>Rozmluv se, s. r. o.</p>
                 <p>Pavlíkova 7, Klatovy</p>
                 <p>IČO: 19647964</p>
+                <p>DIČ: CZ19647964</p>
               </div>
             </div>
 
-            <div className='grid grid-cols-2 gap-8 mt-10'>
+            <div className='mt-10 grid grid-cols-2 gap-8'>
               <img src='/contact/1.webp' alt='cedule' className='rounded-2xl' />
               <img src='/contact/3.webp' alt='učebna' className='rounded-2xl' />
             </div>
           </div>
 
           <div className='xl:hidden'>
-            <div className='font-stabil text-lg xl:text-2xl grid gap-y-10'>
+            <div className='grid gap-y-10 font-stabil text-lg xl:text-2xl'>
               <div className='grid'>
                 <p>Pavlíkova 7, Klatovy</p>
                 <p>Křížová 162, Klatovy</p>
                 <a href='mailto:ciao@rozmluv.se'>ciao@rozmluv.se</a>
                 <a href='tel:+420734675810'>+420 734 675 810</a>
                 <button
-                  className='font-labil font-black place-self-start ffs-12-hover'
+                  className='ffs-12-hover place-self-start font-labil font-black'
                   onClick={() => openNewsletter()}
                 >
                   {language === 'cz' && 'Odběr newsletteru ←'}
@@ -94,12 +95,13 @@ export const Contact = () => {
                 <p>rozmluv se s. r. o.</p>
                 <p>Pavlíkova 7, Klatovy</p>
                 <p>IČO: 19647964</p>
+                <p>DIČ: CZ19647964</p>
               </div>
             </div>
           </div>
         </Cols>
 
-        <div className='grid grid-cols-2 gap-8 mt-10 xl:hidden'>
+        <div className='mt-10 grid grid-cols-2 gap-8 xl:hidden'>
           <img src='/contact/1.webp' alt='cedule' className='rounded-2xl' />
           <img src='/contact/3.webp' alt='učebna' className='rounded-2xl' />
         </div>
