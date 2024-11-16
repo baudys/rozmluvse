@@ -45,8 +45,8 @@ export const Newsletter = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className={cn(
-              'w-screen h-screen top-0 left-0 grid place-content-center z-[1005] bg-black/60 backdrop-blur-sm',
-              studio ? 'hidden' : 'fixed'
+              'left-0 top-0 z-[1005] grid h-screen w-screen place-content-center bg-black/60 backdrop-blur-sm',
+              studio ? 'hidden' : 'fixed',
             )}
           >
             <motion.div
@@ -55,12 +55,12 @@ export const Newsletter = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ delay: 0.1 }}
-              className='relative max-w-[333px] sm:max-w-[500px] max-h-[500px] aspect-square mx-4 bg-[#9F6ACD] p-4 rounded-3xl'
+              className='relative mx-4 aspect-square max-h-[500px] max-w-[333px] rounded-3xl bg-[#9F6ACD] p-4 sm:max-w-[500px]'
             >
               <Button
                 onClick={() => closeNewsletter()}
                 variant='ghost'
-                className='hover:bg-transparent absolute top-4 right-4 p-0 m-0 w-min h-min'
+                className='absolute right-4 top-4 m-0 h-min w-min p-0 hover:bg-transparent'
               >
                 <X className='text-zinc-200' />
               </Button>
@@ -69,9 +69,9 @@ export const Newsletter = () => {
                 method='post'
                 action={process.env.NEXT_PUBLIC_ECOMAIL}
                 onSubmit={() => closeNewsletterPermanently}
-                className='w-[85%] sm:w-[65%] mx-auto mt-12'
+                className='mx-auto mt-12 w-[85%] sm:w-[65%]'
               >
-                <h2 className='text-3xl text-center text-white'>
+                <h2 className='text-center text-3xl text-white'>
                   {language === 'cz' &&
                     'Novinky ve výuce, tipy na učení i pohled do zákulisí ti pošleme v newsletteru na'}
                   {language === 'en' &&
@@ -84,16 +84,16 @@ export const Newsletter = () => {
                 <input
                   type='email'
                   name='email'
-                  className='mt-8 mb-2 bg-transparent border border-zinc-200 w-full placeholder:text-white text-center font-stabil text-lg rounded-3xl py-1 text-white'
+                  className='mb-2 mt-8 w-full rounded-3xl border border-zinc-200 bg-transparent py-1 text-center font-stabil text-lg text-white placeholder:text-white'
                   placeholder='tvuj@email.com'
                 />
                 <input
                   type='text'
                   name='name'
-                  className='mb-2 bg-transparent border border-zinc-200 w-full placeholder:text-white text-center font-stabil text-lg rounded-3xl py-1 text-white'
+                  className='mb-2 w-full rounded-3xl border border-zinc-200 bg-transparent py-1 text-center font-stabil text-lg text-white placeholder:text-white'
                   placeholder='tvoje jméno'
                 />
-                <div className='flex items-center justify-between mb-6'>
+                <div className='mb-6 flex items-center justify-between'>
                   <div className='flex gap-2'>
                     <input
                       type='radio'
@@ -101,13 +101,13 @@ export const Newsletter = () => {
                       id='lang'
                       value='cz'
                       defaultChecked
-                      onChange={e => setLang(e.currentTarget.value)}
+                      onChange={(e) => setLang(e.currentTarget.value)}
                     />
-                    <h3 className='font-stabil text-white items-center'>
+                    <h3 className='items-center font-stabil text-white'>
                       {language === 'cz' && 'v češtině'}
-                      {language === 'en' && ''}
-                      {language === 'de' && ''}
-                      {language === 'ua' && ''}
+                      {language === 'en' && 'in Czech'}
+                      {language === 'de' && 'auf Tschechisch'}
+                      {language === 'ua' && 'чеською мовою'}
                     </h3>
                   </div>
                   <div className='flex gap-2'>
@@ -116,13 +116,13 @@ export const Newsletter = () => {
                       name='lang'
                       id='lang'
                       value='en'
-                      onChange={e => setLang(e.currentTarget.value)}
+                      onChange={(e) => setLang(e.currentTarget.value)}
                     />
-                    <h3 className='font-stabil text-white items-center'>
+                    <h3 className='items-center font-stabil text-white'>
                       {language === 'cz' && 'v angličtině'}
-                      {language === 'en' && ''}
-                      {language === 'de' && ''}
-                      {language === 'ua' && ''}
+                      {language === 'en' && 'in English'}
+                      {language === 'de' && 'auf Englisch'}
+                      {language === 'ua' && 'англійською мовою'}
                     </h3>
                   </div>
                   <input
@@ -136,7 +136,7 @@ export const Newsletter = () => {
                 <div className='flex flex-col gap-4'>
                   <Button
                     type='submit'
-                    className='bg-white rounded-full py-5 text-xl text-black hover:bg-zinc-50 ffs-12-hover font-labil font-black'
+                    className='ffs-12-hover rounded-full bg-white py-5 font-labil text-xl font-black text-black hover:bg-zinc-50'
                   >
                     {language === 'cz' && 'odebírej'}
                     {language === 'en' && 'subscribe'}
