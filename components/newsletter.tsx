@@ -73,13 +73,6 @@ export const Newsletter = () => {
               <form
                 method='post'
                 action={process.env.NEXT_PUBLIC_ECOMAIL}
-                onSubmit={(e) => {
-                  e.preventDefault()
-                  closeNewsletterPermanently()
-
-                  const form = e.target as HTMLFormElement
-                  form.submit()
-                }}
                 className='mx-auto mt-12 w-[85%] sm:w-[65%]'
               >
                 <h2 className='text-center text-3xl text-white'>
