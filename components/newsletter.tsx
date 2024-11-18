@@ -23,6 +23,13 @@ export const Newsletter = () => {
 
   const [lang, setLang] = useState('cz')
 
+  const studio = pathname.includes('/studio')
+
+  const submitForm = () => {
+    process.env.NEXT_PUBLIC_ECOMAIL
+    closeNewsletter()
+  }
+
   useEffect(() => {
     const newsletterTimeout = setTimeout(() => {
       if (!document.cookie.includes('newsletterClosed')) {
@@ -32,8 +39,6 @@ export const Newsletter = () => {
 
     return () => clearTimeout(newsletterTimeout)
   }, [openNewsletter])
-
-  const studio = pathname.includes('/studio')
 
   return (
     <>
@@ -68,7 +73,13 @@ export const Newsletter = () => {
               <form
                 method='post'
                 action={process.env.NEXT_PUBLIC_ECOMAIL}
-                onSubmit={() => closeNewsletterPermanently}
+                onSubmit={(e) => {
+                  e.preventDefault()
+                  closeNewsletterPermanently()
+
+                  const form = e.target as HTMLFormElement
+                  form.submit()
+                }}
                 className='mx-auto mt-12 w-[85%] sm:w-[65%]'
               >
                 <h2 className='text-center text-3xl text-white'>
