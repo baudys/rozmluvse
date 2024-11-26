@@ -27,20 +27,20 @@ export const Navbar = ({ posts }: Props) => {
   const blog = pathname.includes('/blog')
 
   return (
-    <nav className='fixed top-0 w-full py-4 bg-white z-[1000]'>
+    <nav className='fixed top-0 z-[1000] w-full bg-white py-4'>
       <Container>
-        <div className='flex justify-between items-end'>
+        <div className='flex items-end justify-between'>
           <Link
             href='/#home'
-            className='text-2xl md:text-3xl lg:text-4xl place-self-center ffs-12'
+            className='ffs-12 place-self-center text-2xl md:text-3xl lg:text-4xl'
           >
             rozmluv se
           </Link>
-          <div className='flex items-center gap-2 sm:gap-3 md:gap-6 pt-1 text-sm sm:text-base'>
+          <div className='flex items-center gap-2 pt-1 text-sm sm:gap-3 sm:text-base md:gap-6'>
             {blog ? (
               <button
-                className='font-stabil inline-flex gap-1 items-center'
-                onClick={() => setSearchOpen(prev => !prev)}
+                className='inline-flex items-center gap-1 font-stabil'
+                onClick={() => setSearchOpen((prev) => !prev)}
               >
                 <Search size={15} />
                 {language === 'cz' && 'Hledat'}
@@ -57,14 +57,20 @@ export const Navbar = ({ posts }: Props) => {
                 >
                   Aktuality
                 </Link>
-                <p className='font-stabil'>Shop</p>
+                <Link
+                  href='https://linktr.ee/rozmluv.se'
+                  target='_blank'
+                  className='font-stabil'
+                >
+                  Shop
+                </Link>
               </>
             )}
             <LanguageSelector color='black' />
             <Button
               variant='ghost'
               onClick={() => openMenu()}
-              className='font-stabil hover:bg-transparent p-0 m-0 sm:!text-base'
+              className='m-0 p-0 font-stabil hover:bg-transparent sm:!text-base'
             >
               Menu
             </Button>
