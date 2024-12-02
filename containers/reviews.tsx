@@ -47,9 +47,9 @@ export const Reviews = ({ reviews }: Props) => {
               linkUa='сюди ←'
             />
 
-            <div className='grid-cols-2 gap-8 mt-14 hidden lg:grid'>
+            <div className='mt-14 hidden grid-cols-2 gap-8 lg:grid'>
               <Accordion type='multiple' className='flex flex-col gap-8'>
-                {reviews.slice(0, itemsPerColumn).map(review => (
+                {reviews.slice(0, itemsPerColumn).map((review) => (
                   <AccordionItem
                     key={review.textCz + review.nameCz}
                     value={review.textCz}
@@ -57,11 +57,11 @@ export const Reviews = ({ reviews }: Props) => {
                     className='rounded-2xl'
                   >
                     <AccordionTrigger>
-                      <div className='flex gap-2 items-center truncate'>
+                      <div className='flex items-center gap-2 truncate'>
                         <img
                           src={urlForImage(review.image)}
                           alt={review.nameCz}
-                          className='rounded-full w-10 h-10'
+                          className='h-10 w-10 rounded-full'
                         />
                         <span className='line-clamp-1 text-left'>
                           {language === 'cz' && review.nameCz}
@@ -81,19 +81,19 @@ export const Reviews = ({ reviews }: Props) => {
                 ))}
               </Accordion>
               <Accordion type='multiple' className='flex flex-col gap-8'>
-                {reviews.slice(itemsPerColumn).map(review => (
+                {reviews.slice(itemsPerColumn).map((review) => (
                   <AccordionItem
                     key={review.textCz + review.nameCz}
                     value={review.textCz}
                     style={{ backgroundColor: `#${review.color}` }}
-                    className='rounded-2xl h-min'
+                    className='h-min rounded-2xl'
                   >
                     <AccordionTrigger>
-                      <div className='flex gap-2 items-center'>
+                      <div className='flex items-center gap-2'>
                         <img
                           src={urlForImage(review.image)}
                           alt={review.nameCz}
-                          className='rounded-full w-10 h-10'
+                          className='h-10 w-10 rounded-full'
                         />
                         <span className='line-clamp-1 text-left'>
                           {language === 'cz' && review.nameCz}
@@ -116,21 +116,21 @@ export const Reviews = ({ reviews }: Props) => {
           </div>
         </Cols>
 
-        <div className='grid sm:grid-cols-2 gap-4 mt-14 lg:hidden'>
+        <div className='mt-14 grid gap-4 sm:grid-cols-2 lg:hidden'>
           <Accordion type='multiple' className='flex flex-col gap-4'>
-            {reviews.slice(0, itemsPerColumn).map(review => (
+            {reviews.slice(0, itemsPerColumn).map((review) => (
               <AccordionItem
                 key={review.textCz + review.nameCz}
                 value={review.textCz}
                 style={{ backgroundColor: `#${review.color}` }}
-                className='rounded-2xl h-min'
+                className='h-min rounded-2xl'
               >
                 <AccordionTrigger>
-                  <div className='flex gap-2 items-center'>
+                  <div className='flex items-center gap-2'>
                     <img
                       src={urlForImage(review.image)}
                       alt={review.nameCz}
-                      className='rounded-full w-10 h-10'
+                      className='h-10 w-10 rounded-full'
                     />
                     <span className='line-clamp-1 text-left'>
                       {language === 'cz' && review.nameCz}
@@ -150,19 +150,19 @@ export const Reviews = ({ reviews }: Props) => {
             ))}
           </Accordion>
           <Accordion type='multiple' className='flex flex-col gap-4'>
-            {reviews.slice(itemsPerColumn).map(review => (
+            {reviews.slice(itemsPerColumn).map((review) => (
               <AccordionItem
                 key={review.textCz + review.nameCz}
                 value={review.textCz}
                 style={{ backgroundColor: `#${review.color}` }}
-                className='rounded-2xl h-min'
+                className='h-min rounded-2xl'
               >
                 <AccordionTrigger>
-                  <div className='flex gap-2 items-center'>
+                  <div className='flex items-center gap-2'>
                     <img
                       src={urlForImage(review.image)}
                       alt={review.nameCz}
-                      className='rounded-full w-10 h-10'
+                      className='h-10 w-10 rounded-full'
                     />
                     <span className='line-clamp-1 text-left'>
                       {language === 'cz' && review.nameCz}
