@@ -20,7 +20,7 @@ export const Post = ({ post }: Props) => {
       <Container>
         <Cols>
           <div />
-          <h1 className='text-3xl sm:text-4xl md:text-5xl font-black lg:text-6xl mt-2 mb-14'>
+          <h1 className='mb-14 mt-2 text-3xl font-black sm:text-4xl md:text-5xl lg:text-6xl'>
             {post.title}
           </h1>
         </Cols>
@@ -35,7 +35,7 @@ export const Post = ({ post }: Props) => {
                 <p
                   key={category.title}
                   style={{ background: `#${category.color}` }}
-                  className='text-center rounded-2xl py-1 text-xs lg:w-1/2 mb-1'
+                  className='mb-1 rounded-2xl py-1 text-center text-xs lg:w-1/2'
                 >
                   {category.title}
                 </p>
@@ -48,7 +48,7 @@ export const Post = ({ post }: Props) => {
             <Link
               href={post.ctaUrl}
               target='_blank'
-              className='bg-[#FFC600] rounded-full text-xl px-7 py-4 font-labil'
+              className='whitespace-nowrap rounded-full bg-[#FFC600] px-7 py-4 font-labil text-[3vw] sm:text-xl'
             >
               {post.ctaLabel}
             </Link>
