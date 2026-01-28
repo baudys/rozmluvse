@@ -27,6 +27,13 @@ export const Contact = () => {
                 <p>Pavlíkova 7, Klatovy</p>
                 <p>Křížová 162, Klatovy</p>
                 <a href='mailto:ciao@rozmluv.se'>ciao@rozmluv.se</a>
+                
+                <br />
+                <p>Adriana Černá</p>
+                <a href='tel:+420733557502'>+420 733 557 502</a>
+                <br />
+                
+                <p>Kateřina Hulecová</p>
                 <a href='tel:+420734675810'>+420 734 675 810</a>
                 <button
                   className='ffs-12-hover inline-flex place-self-start font-labil font-black'
